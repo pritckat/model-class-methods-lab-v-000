@@ -4,6 +4,6 @@ class Boat < ActiveRecord::Base
   has_many    :classifications, through: :boat_classifications
 
   def self.first_five
-    self.all[0..4]
+    all.limit(5)
   end
 end
